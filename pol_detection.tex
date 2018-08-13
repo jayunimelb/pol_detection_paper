@@ -1,0 +1,283 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%\documentclass[usenatbib, twocolumn, nofootinbib, preprint]{aastex61}
+\documentclass[twocolumn]{aastex61}
+
+\usepackage{multirow}
+\usepackage{color}
+\usepackage{amsmath,amsfonts,bm}%,amsfonts,amsthm,bm}
+\usepackage{hyperref}% add hypertext capabilities
+\usepackage[T1]{fontenc}
+\usepackage{graphicx}	% Including figure files
+\usepackage{multirow}
+\usepackage{dcolumn}
+\usepackage{lineno}
+\newcolumntype{C}[1]{>{\centering\let\newline\\\arraybackslash\hspace{0pt}}m{#1}}
+\linenumbers
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\newcommand{\pending}[1]{\textcolor{red}{#1}}
+\newcommand{\comments}[1]{\textcolor{blue}{#1}}
+
+\newcommand{\sptpol}{\textsc{SPTpol}}
+\newcommand{\des}{\textsc{DES}}
+\newcommand{\planck}{{\it Planck}}
+\newcommand{\snr}{$S/N$}
+\newcommand{\lgmca}{\texttt{LGMCA}}
+\newcommand{\smica}{\texttt{SMICA}}
+\newcommand{\sptsz}{\textsc{SPT-SZ}}
+
+
+\newcommand{\fitAforfullsamplewitherrors}{$2.97^{0.45}_{-0.46}$}% $\times$ \munits }
+\newcommand{\fitAforvlsamplewitherrors}{$2.90^{0.72}_{-0.71}$}% $\times$ \munits }
+\newcommand{\fitAforfullsamplewitherrorslgmca}{\pending{xx}}% $\times$ \munits }
+\newcommand{\fitAforvlsamplewitherrorslgmca}{\pending{xx}}% $\times$ \munits }
+\newcommand{\fitAforfullsamplewitherrorsszfreemaps}{$3.08^{0.45}_{-0.46}$}% $\times$ \munits }
+\newcommand{\fitAforvlsamplewitherrorsszfreemaps}{$2.64^{0.64}_{-0.62}$}% $\times$ \munits }
+
+
+%%values
+\newcommand{\howmanyclustersinfullsamplenorichnesscut}{4003}
+\newcommand{\howmanyrandomsforMF}{80,000}
+\newcommand{\howmnaysigmaforfullsample}{8.1$\sigma$}%\pending{8.9$\sigma$}}
+\newcommand{\howmnaysigmaforcosmosample}{5.3$\sigma$}%\pending{6.3$\sigma$}}
+\newcommand{\howmnaysigmaforfullsamplelgmca}{\pending{10.2$\sigma$}}%\pending{8.9$\sigma$}}
+\newcommand{\howmnaysigmaforcosmosamplelgmca}{\pending{7.5$\sigma$}}%\pending{6.3$\sigma$}}
+\newcommand{\howmanyclustersinfullsample}{4003}
+\newcommand{\howmanyclustersincosmosample}{1741}
+\newcommand{\desmassvalues}{2.07 $\pm$ 0.26 $\times$ 10$^{14}$ \msol }
+\newcommand{\sysbiaseinastoresult}{2.0 $\pm$ 0.39 $\times$ 10$^{14}$ \msol}
+\newcommand{\sysbiascosmoresult}{2.25 $\pm$ 0.39 $\times$ 10$^{14}$ \msol}
+\newcommand{\sysbiasbeamresult}{2.20 $\pm$ 0.39 $\times$ 10$^{14}$ \msol}
+\newcommand{\sysbiastfaresult}{2.34 $\pm$ 0.39 $\times$ 10$^{14}$ \msol}
+\newcommand{\sysbiastfbresult}{2.29 $\pm$ 0.39 $\times$ 10$^{14}$ \msol}
+\newcommand{\sysbiastfcresult}{2.26 $\pm$ 0.39 $\times$ 10$^{14}$ \msol}
+\newcommand{\sysbiastfallresult}{2.34, 2.29, 2.26 $\pm$ 0.39 $\times$ 10$^{14}$ \msol }
+
+
+\newcommand{\howmnaysigmaforfullsampleszfreemaps}{8.2$\sigma$}%\pending{8.9$\sigma$}}
+\newcommand{\howmnaysigmaforvlsampleszfreemaps}{5.4$\sigma$}%\pending{6.3$\sigma$}}
+
+\newcommand{\fitmassforfullsample}{1.6}% $\times$ \munits }
+\newcommand{\fitmassforfullsamplewitherrors}{$1.6^{0.25}_{-0.23}$}% $\times$ \munits }
+\newcommand{\fitmassforfullsamplewitherrorslgmca}{\pending{ xx $\pm$ xx}}% $\times$ \munits }
+\newcommand{\fitmassforfullsamplewithszfreemaps}{$1.8^{0.234}_{-0.29}$}% $\times$ \munits }
+%\newcommand{\fitmassforfullsamplewitherrorsformatted}{1.9  $\pm\ 0.38_{\rm stat}$}% $\times$ \munits }
+
+\newcommand{\fitmassforvlsample}{1.7}% $\times$ \munits }
+\newcommand{\fitmassforvlsamplewitherrors}{$1.7^{0.43}_{-0.36}$}% $\times$ \munits }
+\newcommand{\fitmassforvlsamplewitherrorslgmca}{\pending{ xx $\pm$ xx}}% $\times$ \munits }
+\newcommand{\fitmassforvlsamplewithszfreemaps}{$1.7^{0.48}_{-0.31}$}% $\times$ \munits }
+%\newcommand{\fitmassforvlsamplewitherrorsformatted}{2.1  $\pm$ 0.59 (stat)}% $\times$ \munits }
+
+\newcommand{\fitAvalforfullsamplewitherrors}{3.1 $\pm$ 0.88}% $\times$ \munits }
+\newcommand{\fitAvalforcosmosamplewitherrors}{3.0 $\pm$ 0.62}% $\times$ \munits }
+\newcommand{\fitAvalforfullsamplenotwohalotermwitherrors}{2.79 $\pm$ 0.45 $\times$ \munits }
+\newcommand{\fitalphavalforfullsamplewitherrors}{1.23 $\pm$ 0.3 }
+\newcommand{\fullsamplesigmaML}{8.93$\sigma$}
+\newcommand{\cosmosamplesigmaML}{6.27$\sigma$}
+
+\newcommand{\fitAvalueforfullsamplenotwohaloterm}{2.66 $\pm$ 0.47}
+\newcommand{\fitAvalueforfullsample}{2.26 $\pm$ 0.4}
+\newcommand{\fitAvalueforcosmosample}{2.88 $\pm$ 0.64}
+\newcommand{\fitAfullsamplesnr}{$8.93\sigma$}
+\newcommand{\fitAcosmosamplesnr}{$6.27\sigma$}
+
+\newcommand{\desrmfullsamplemeanmass}{2.29 $\times$ \munits}
+\newcommand{\desrmfullsamplemeanmassnocut}{2.42 $\times$ \munits}
+
+%our macros
+\newcommand{\fittingradius}{$10'$}
+\newcommand{\totalsimsused}{100}
+\newcommand{\mvir}{M$_{200m}$}
+\newcommand{\kappaonehalofull}{$\kappa^{1h}(\theta)$}
+\newcommand{\kappatwohalofull}{$\kappa^{2h}(\theta)$}
+\newcommand{\kappaonehalomz}{$\kappa^{1h}(\rm{M},z)$}
+\newcommand{\kappatwohalomz}{$\kappa^{2h}(\rm{M}, z)$}
+%\newcommand{\kappatotalmz}{$\kappa^{tot}(\rm{M}, z)$}
+\newcommand{\kappatotalmz}{$\kappa(\rm{M}, z)$}
+\newcommand{\kappatotalaalphaz}{$\kappa^{tot}(\rm{A}, \alpha, z)$}
+\newcommand{\kappaonehalo}{$\kappa^{1h}$}
+\usepackage[utf8]{inputenc}
+\usepackage{newunicodechar}
+
+\newcommand{\textprime}{\ensuremath{'}}
+\newunicodechar{′}{\textprime}
+\newcommand{\kappatwohalo}{$\kappa^{2h}$}
+\newcommand{\kappatotal}{$\kappa^{tot}$}
+%\newcommand{\arcmin}{^{\prime}}
+%\newcommand{\micron}{$\mu$}
+\newcommand{\boxsize}{$100' \times 100'$}
+\newcommand{\boxsizelgmca}{$300' \times 300'$}
+\newcommand{\MLboxsize}{$10' \times 10'$}
+\newcommand{\whichyear}{year-3}
+\newcommand{\whichsample}{full}
+\newcommand{\whichcatversion}{\texttt{y3\_gold:v6.4.22}}%{\texttt{y3\_gold:v6.4.21}}
+\newcommand{\howmanysigmastacked}{7.8}
+\newcommand{\howmanysigmastackedforpol}{2.6}
+\newcommand{\howmanyclusters}{\pending{3289}}
+\newcommand{\ML}{\mbox{$\lambda-M$} }
+\newcommand{\MLfull}{M = A $\left(\frac{\lambda}{\lambda_{0}}\right)^{\alpha}$ $\left(\frac{1+z}{1+z_{0}}\right)^{\beta = 0.18}$}
+\newcommand{\MLfulltext}{\mbox{M = A $(\lambda/\lambda_{0})^{\alpha}$ [(1+z)/(1+z$_{0}$)]$^{0.18}$} }
+
+%%\newcommand{\MLfulltextdesvalues}{\mbox{M = A $(\lambda/30)^{\alpha}$ [(1+z)/(1.5)]$^{0.18}$} }
+\newcommand{\MLfulltextdesvalues}{\mbox{M = A $(\lambda/40)^{\alpha}$ [(1+z)/0.5]$^{-0.3}$} }
+
+\newcommand{\MLfulltextdes}{\mbox{M = A$_{\rm DES}$ $(\lambda/\lambda_{0})^{\alpha_{\rm DES}}$ [(1+z)/(1+z$_{0}$)]$^{0.18}$} }
+\newcommand{\am}{$^{\prime}$}
+\newcommand{\ukam}{$\mu K^{\prime}$}
+\newcommand{\sqdeg}{deg$^{2}$}
+\newcommand{\tszfreemapnotation}{{\rm SZ-free}}%{\tilde{T}_{90\times150}}
+%\newcommand{\tszfreemapnotationfft}{T^{tSZfree}_{\bL}}%{\tilde{T}_{90\times150}}
+%\newcommand{\M}{ million}
+\newcommand{\maxelforQE}{2000}
+\newcommand{\bnhat}{\bm{\hat{\mbox{n}}}}
+\newcommand{\bL}{\bm{\ell}}
+\newcommand{\desrm}{DES redMaPPer}
+\newcommand{\desrmsc}{\textsc{DES redMaPPer}}
+%\newcommand{\RM}{\textsc{redMaPPer}}
+\newcommand{\RM}{redMaPPer} %\newcommand{\RM}{\texttt{redMaPPer}}
+\newcommand{\msol}{$\mbox{M}_{\odot}$}
+\newcommand{\munits}{$10^{14}$ \msol}
+\newcommand{\nver}{\hat{\mathbf{n}}}
+\newcommand{\shm}{$\mbox{M}_{*}-\mbox{M}_{h}$}
+\newcommand{\lcdm}{$\Lambda$CDM}
+\newcommand{\beambl}{$B_{\ell}$}
+\newcommand{\comment}[1]{}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\defcitealias{raghunathan17a}{R17}
+\defcitealias{baxter18}{B18}
+\defcitealias{sehgal10}{S10}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{document}
+
+%\title{CMB-lensing mass calibration of the \des{} year-3 \RM{} clusters using \sptpol{} temperature maps}
+\title{First Pol. detection}
+%\correspondingauthor{}
+\email{srinivasan.raghunathan@unimelb.edu.au}
+\author{\textsc{SPTpol
+} collaboration}[
+\affiliation{School of Physics, University of Melbourne, Parkville, VIC 3010, Australia}
+\author{\textsc{DES} collaboration}
+\author{ ++ }
+
+% These dates will be filled out by the publisher
+\keywords{CMB lensing -- galaxy clusters -- gravitational lensing}
+
+\date{Accepted XXX. Received YYY; in original form ZZZ}
+\begin{abstract}
+We present the detection of lensing signal in cosmic microwave background (CMB) polarisation data by Galaxy Clusters. Here we have used CMB polarisation maps from 500 deg$^2$ South Pole Telescope (SPT) SPTpol survey and optically selected galaxy cluster catalog from Dark Energy Survey (DES). Lensing signal is favoured over null signal at \pending{xx} significance and the mean mass of the galaxy cluster sample is found to be \pending{mm+/-}.
+\pending{what else ?? importance of pol. detection?}
+\end{abstract}
+
+%\maketitle
+
+%%%%%%%%%%%%%%%%% BODY OF PAPER %%%%%%%%%%%%%%%%%%
+
+\section{Introduction}\label{sec_intro}
+
+\pending{Its almost similar to the temp. only paper.. should I change it completely or just re-phrase it}
+Galaxy Clusters being the most massive objects in the Universe provide crucial insight into the standard model of cosmology. Their abundance as function of mass and redshift is highly sensitive to the properties of dark energy, sum of neutrino masses, and structure growth\citep[and references therein]{lesgourgues05, wang05,haiman01, weinberg13}. \citet{dehaan16} showed that even few hundred clusters can provide competitive constrains on cosmological parameters indicating that tens of thousands of cluster samples available in near future \citep{lsst09, erosita12, benson14, henderson16, cmbs4-sb1} will improve the constraints by several fold. Though clusters are powerful probes of cosmology they are currently limited by uncertainties in mass estimation. Mass-observable scaling relations such as X-ray luminosity, the Sunyaev-Zel{'}dovich (SZ) flux or optical richness \citep{appelgate14,linden14} are currently limited uncertainties \citep{hasselfield:2013} present in cluster baryonic physics. 
+
+One of the promising ways forward is weak gravitational lensing as it measures the total mass of galaxy cluster without depending on complex baryonic physics. Gravitational lensing due to background galaxies \citep{henk13}can be used to estimate cluster mass. However, at high redshift, galaxy lensing becomes more challenging as it is harder to find source galaxies; measure their redshifts and shapes. On the other hand, we can use cosmic microwave background (CMB) as a source instead, it is behind all the galaxy clusters at known redshift (z$ \sim $1100) and is statistically well modelled. While CMB-cluster lensing is currently in its infancy, it is best available method for future surveys \citep{lsst09, erosita12, benson14, henderson16, cmbs4-sb1} which are expected to detect tens of thousands of clusters at high redshift. CMB lensing is also comparatively free of systematic uncertainties and complementary to low-redshift galaxy weak-lensing measurements. However, the CMB-cluster lensing signal is small for any single cluster, and we are limited to measuring the average mass of a cluster sample.
+
+Several estimators have been proposed in the literature to extract the CMB-cluster lensing signal using the CMB temperature and polarization maps \citep{seljak00b, dodelson04, holder04, maturi05, lewis06,  hu07, yoo08, yoo10, melin15}. Though there has been no detection of halo-lensing signal in CMB polarisation data so for, there has been quite a few measurements using CMB temperature data by number of different experiments. The first detection 3.1$\sigma$ was made by \citet{baxter15} for a sample of 513 SZ-selected galaxy clusters with the South Pole Telescope (SPT) SZ survey. This was followed in short-order by measurements using  \planck\ data \citet{placksz15}. A similar measurement has also been extended to lower mass haloes, first using data from ACTPol \citep{matthew15} and later by {\it Planck} \citep{raghunathan17b}.  More recently, the CMB-cluster lensing signal from {\it Planck} survey was used to constrain the cluster mass at $10\%$ level using redMaPPer (RM) clusters detected from Sloan Digital Sky Survey \citep{geach17} ;a second analysis constrained mass at $17\%$  level using DES year cluster catalog and the SPT-SZ survey \citep[hereafter \citetalias{baxter18}]{baxter18}. 
+
+As mentioned earlier, these initial measurements have estimated the lensing signal from the CMB temperature data. The temperature lensing signal has the clear advantage of being brighter, however it becomes sample variance limited with lower noise CMB surveys \citep{hu07, raghunathan17a} and, more critically, has to deal with the imprint of the cluster's own emission from the SZ effects, radio galaxies, and dusty galaxies. Since this emission is mostly unpolarized, there is a clear systematics advantage to using CMB polarization to estimate the lensing signal with future surveys \citep[hereafter \citetalias{raghunathan17a}]{raghunathan17a}. Using CMB polarisation data from 500 deg$^2$ of SPTpol survey and \pending{xx} galaxy clusters from Dark Energy Survey, we have detected lensing signal at $2.6 \sigma$. Though it is much weaker than corresponding temperature lensing signal \pending{cite temp. only paper??}, it sets precedent for future surveys where polarisation will outperform temperature. 
+
+The paper is structured as follows: in section 2 we have briefly explained the maximum likelihood estimator used to extract the lensing signal. In section 3 we have described the SPT and DES data sets used for this paper; we present the results in section 4. Finally we conclude in section 5.  \pending{what else to be included} 
+
+Throughout this work, we use the $\Lambda$CDM cosmology obtained from the chain that combines Planck 2015 data with external datasets \texttt{TT,TE,EE+lowP+lensing+ext} \citep{planck15-13}. We define all the halo quantities with respect to the radius $R_{200}$ defined as the region within which the average mass density is 200 times the mean density of the universe at the halo redshift.
+\pending{lit. review on methods?? emphasize more on pol. detection.}
+\section{Methods}
+\label{sec_methods}
+The lensing of CMB due to dark matter halo induces extra pixel-pixel correlation, Maximum Likelihood Estimator (MLE) exploits this to extract lensing signal. In this section, first we describe lensing convergence profiles and then we describe pixel-pixel covariance matrix which acts as our model.
+\pending{more text .. re-pharse it??}
+\subsection{Lensing convergence profile}
+We assume the galaxy cluster density to follow the well known Navvaro Frenk White (NFW) profile (\pending{cite}). It can be characterized by the dimensionless concentration parameter c, and R$_{200}$. With these parameters density profile can be expressed as:
+\begin{equation}
+\rho(r) = \frac{(200/3)c^{3}}{ln(1+c)-\frac{c}{1+c}} \frac{\rho_{crit}(z)}{\frac{rc}{R_{200}}(1+\frac{rc}{R_200})^{2}}
+\end{equation}
+where, $\rho$(r), is the density at a distance r from the center of the cluster; $\rho_{crit}$ is the critical density of the Universe at cluster redshift z. Parameter c, controls how centrally concentrated the density profile is and calculated using Duffy et al (\pending{cite}). 
+\pending{should I mention more about NFW profile or deviations from NFW profile}
+With the defined halo density profile in hand, we obtain the surface mass density by integrating the density profile along the line of sight
+\begin{equation}
+\Sigma(x) = 2 \int_{0}^{\inf} \rho(r) ds
+\end{equation}
+where r is the distance from the cluster center and x is the corresponding planar distance, s is the distance along the line of sight with cluster center as reference. Once we have surface mass density, lensing convergence is calculated as $k_{halo} = \frac{\Sigma(x)}{\Sigma(crit)}$, where, $\Sigma(crit)$ is the critical surface density of the Universe at cluster redshift.
+
+Lensing signal is determined by integrated matter along the line of sight and hence any correlated halos if not taken in consideration will bias our analysis. To take this into account we consider the 2 halo term (\pending{cite Seljak's paper}). We use the Eq. 13 \pending{cite Ogmuri} to calculate lensing convergence of correlated structure, $k_{correlated}$, and this is added to $k_{halo}$ to get the total lensing convergence profile. 
+\subsection{Pixel-Pixel covariance matrix}
+We generate power spectrum, C$_{l}'s$, using Code for Anisotropies in the Microwave Background (CAMB) for \planck\ 15 cosmology. With this power spectrum we simulate random realisations of CMB polarisation Q and U (\pending{explain Q and U}) maps on 100'X100' box at 0.25' resolution. Though final likelihood calculation we will be done on 10' X 10' cutout around cluster center,larger box size ensures that background CMB gradient is well estimated. We lens these unlensed CMB cutouts using pre-obtained total lensing profiles. With these lensed CMB cutouts we calculate the pixel-pixel covariance matrix as follows:
+\begin{equation}
+\Sigma_{cmb}(M,z)  =  \left<\textrm{\textbf{G}}_i  \textrm{\textbf{G}}_i ^{T}\right>
+\label{eq_lensed_cmb_cov_mass_z}
+\end{equation}
+where $G_{i}$ is the concatenated QU vector of the central 10' X 10' box of the $i^{th}$ sky realisation. The required number of random realisation depends on the number of degrees of freedom in the covariance. In our case we find that \pending{500,000} simulations would suffice. To remove any possible bias due to the limited number of simulations, we apply a correction factor $(n_{sims} - n_{d} -1)/n_{sims}$ where $n_{sims}$ is total number of simulations used for our analysis and $n_{d}$ is the length of the concatenated Q/U data vector. \pending{explain the mass and redshift dependence of covariance matrix}. \pending{explain beam and transfer functions}
+
+In addition to lensed CMB covariance, total covariance matrix has component from foregrounds and instrumental noise. Calculation of these covariances vary for data and for pipeline validation. For data we choose random cutouts from the SPTpol maps which has contribution from both instrumental noise and foregrounds. Considering foregrounds weakly polarised and subdominant to the experimental noise of 7uk', we ignore its effect for pipeline validation. Total covariance matrix is given by,
+\begin{equation}
+\Sigma(M,z) = \Sigma_{CMB}(M,z) + \Sigma_{nf},
+\end{equation} 
+where $\Sigma_{nf}$ denotes the covariance matrix component from foregrounds and instrumental noise.
+
+\subsection{Likelihood calculation}
+Once we have the model, which in our case the total covariance matrix, we calculate the likelihood of obtaining the data given the model as,
+\begin{equation}
+-2\ ln \mathcal{L}(\textbf{\textrm{d}}|M,z) =  \ln\left| \Sigma(M,z) \right| + \textrm{\textbf{d}}^{T}\ \Sigma(M,z)^{-1}\  \textrm{\textbf{d}}.
+\end{equation}
+As mentioned previously, the lensing signal from single galaxy cluster is weak and we need to stack many clusters to get considerable SNR.In log likelihood space, this entails a sum over the individual cluster likelihoods:
+\begin{equation}
+-2\ ln \mathcal{L}(\textbf{\textrm{d}}|M) =  \sum_j w_j \left[\ln\left| \Sigma_j(M) \right| + \textrm{\textbf{d}}_j^{T}\ \Sigma_j(M)^{-1}\  \textrm{\textbf{d}}_j \right],
+\label{eq_likelihood_MLE_stacked}
+\end{equation}
+where subscript $j$ to associate quantities with cluster $j$ and $w_{j}$ is the weight associated to individual cluster likelihood. 
+
+\section{Data}\label{sec_data}
+
+Galaxy cluster catalog from DES and CMB maps from SPT..
+data sets from SPT and CMB are explained in detail below
+
+
+\subsection{\sptpol{} {\rm 500} deg$^{2}$ survey}\label{sec_sptpol}
+Bit of SPT here
+
+SPTpol here.
+
+
+\subsection{Dark Energy Survey}
+Dark Energy Survey and redmapper catalog here.... refer Melchoir's paper, 
+
+
+
+\section{Pipeline validation and results}
+\subsection{Pipeline validation}
+\subsection{Results}
+
+
+\section{literature comparison}
+\pending{compare it with corresponding temp. results???}
+\section{Conclusions}\label{sec_conclusion}
+In this paper we report the first ever detection of cluster lensing in CMB polarization at \howmanysigmastackedforpol$\sigma$ significance using \sptpol{} data. Though lensing signal in polarization is an order of magnitude weaker than its temperature counterpart, it is robust to many foreground sources. In addition to that the major systematic in lensing analysis, tSZ, has no signal in polarization making polarization estimator free of major systematic bias. As shown in \citet{raghunathan17a} polaristion estimator outperforms temperature estimator at very low experimental noise levels. So, for future CMB experiments we expect polarization estimator to provide better mass constraints than temperature and our detection will act as a pathway.
+\\ \pending{Mention future surveys and expected uncertainties}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section*{Acknowledgements}
+%\newcommand{\aap}{A\&A}%Astron. strophys.}
+%\newcommand{\apj}{ApJ} 
+%\newcommand{\aj}{Astrophysical Journal} 
+%\newcommand{\apjs}{\apj S} 
+%\newcommand{\procspie}{Proceedings of the SPIE}
+%\newcommand\mnras{MNRAS}
+%\newcommand\apss{Astrophysics and Space Science}
+\newcommand\JCAP{JCAP}
+
+\bibliographystyle{aasjournal}
+%\bibliography{BIBTEX/spt,sptpol_des}
+%{\bibliography{../../BIBTEX/spt,sptpol_des}}
+\IfFileExists{./spt.bib}
+{\bibliography{spt}}
+{\bibliography{../../BIBTEX/spt}}
+
+\end{document}
